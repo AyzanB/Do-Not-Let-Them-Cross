@@ -465,13 +465,13 @@ int main() {
     
                     // deficulty speed 
                     if (totalKillCount % 5 == 0) {
-                        GOBLIN_SPEED += 10;
+                        GOBLIN_SPEED += 15;
                         SPEED += 2;
                         FIRE_SPEED += 4;
                         BACKGROUND_SPEED += 1.5;
                     }
 
-                    if (totalKillCount % 15 == 0) {
+                    if (totalKillCount % 10 == 0) {
                         enemyGoblins.emplace_back(enemyGoblinText);
 
                         randomPosX = minX + (std::rand() % (maxX - minX + 1));
@@ -494,7 +494,7 @@ int main() {
                     enemyHitSound.play();
                     shooterDamageSound.play();
 
-                    damage -= 200;
+                    damage -= 50;
 
                     damageBarFill.setSize({32 - 4, (float) damage - 4});
                     damageText.setString(std::to_string(damage) + "/200");
